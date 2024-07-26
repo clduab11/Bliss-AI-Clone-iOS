@@ -39,7 +39,7 @@ You can download it for free from the Google Play Store!
 - Your interactions are never used to train the model
 
 ## Contact
-[jesaitarun@gmail.com]
+jesaitarun@gmail.com
 
 ---
 
