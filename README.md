@@ -41,6 +41,8 @@ You can download it for free from the Google Play Store!
 ## Contact
 jesaitarun@gmail.com
 
+## Credits
+Thanks to emilbaehr's automatic-app-landing-page for a landing webpage template!
 ---
 
 Bliss AI - Empowering smarter studying through artificial intelligence.
