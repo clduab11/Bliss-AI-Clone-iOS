@@ -1,22 +1,46 @@
-# Bliss AI: Your Revolutionary AI Study Partner
+# Bliss AI - Your Revolutionary AI Study Partner
 
-Bliss AI is an advanced Android application designed to revolutionize your studying experience. Powered by one of the world's most intelligent AI LLMs, Gemini 1.5 Pro, Bliss AI offers a suite of features to enhance your learning journey.
+Bliss AI is an innovative Android application designed to revolutionize your studying experience. Powered by advanced AI technology, Bliss AI aims to make learning smarter, more efficient, and tailored to your individual needs.
+You can download it for free from the Google Play Store!
 
-## Key Features:
+## Features
 
-- **AI Tutor**: Utilizes advanced LaTeX rendering for crystal-clear explanations in math, physics, chemistry, and more.
+### The Bliss AI Tutor
+- **Advanced LaTeX Rendering**: Supports complex math, physics, chemistry, and other explanations with crystal-clear handwriting-style responses.
 - **Self-Learning Memory System**: Adapts to your learning style and improves over time.
-- **Hyper-Personalized Learning**: Tailors explanations to your curriculum, grade, and preferences.
-- **AI Study Scheduler**: Optimizes your weekly study schedule based on your performance history.
-- **AI Marks Analyser**: Transforms raw exam scores into actionable insights for improvement.
-- **Gamified To-Do List**: Keeps you organized and motivated with subject-sorted tasks and progress tracking.
+- **Hyper-Personalized Learning**: Provides explanations tailored to your curriculum, grade, and preferences.
+- **Free Unlimited Chats**: Enjoy unlimited conversations with the AI tutor.
+- **Multi-Modal Interaction**: Send multiple images and even speak to the AI.
 
-## Additional Benefits:
+### The AI Study Scheduler
+- **Optimized Weekly Schedules**: Get personalized study plans based on your academic history and preferences.
+- **Intelligent Time Allocation**: Focus more on subjects that need improvement.
+- **Burnout Prevention**: Achieve balanced learning and maximize focus.
+- **Easy Printing**: Conveniently print your schedules.
 
-- Free unlimited chats with image support and voice interaction
-- No ads, no tracking, and your interactions are never used to train the model
-- Handwriting-style math responses for a more natural learning experience
+### The AI Marks Analyser
+- **Data-Driven Insights**: Transform raw exam scores into actionable improvement strategies.
+- **Trend Analysis**: Uncover hidden patterns in your academic performance.
+- **Comprehensive Analysis**: Gain insights through both quantitative statistics and qualitative AI analysis.
 
-Bliss AI is your all-in-one solution for smarter, more efficient studying. Whether you're looking to improve your grades, manage your time better, or gain deeper insights into your academic performance, Bliss AI has you covered.
+### The Gamified To-Do List
+- **Stay Organized**: Manage your tasks with a motivating, game-like interface.
+- **Subject-Based Sorting**: Easily manage tasks by academic subject.
+- **Progress Tracking**: Visualize your achievements as you complete goals.
+- **Daily Reminders**: Customizable notifications to keep you on track.
 
-Get ready to transform your learning experience with Bliss AI - your revolutionary AI partner for smarter studying!
+## Technology
+- Powered by one of the world's most intelligent AI LLMs: Gemini 1.5 Pro (the same model used in the $20 per month Gemini Advanced!)
+- Fine-tuned for optimal educational support
+
+## Privacy and Security
+- No ads
+- No tracking
+- Your interactions are never used to train the model
+
+## Contact
+[jesaitarun@gmail.com]
+
+---
+
+Bliss AI - Empowering smarter studying through artificial intelligence.
