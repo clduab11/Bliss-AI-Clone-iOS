@@ -43,6 +43,7 @@ jesaitarun@gmail.com
 
 ## Credits
 Thanks to emilbaehr's automatic-app-landing-page for a landing webpage template!
+
 ---
 
 Bliss AI - Empowering smarter studying through artificial intelligence.
