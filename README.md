@@ -1,7 +1,9 @@
 # Bliss AI - Your Revolutionary AI Study Partner
 
 Bliss AI is an innovative Android application designed to revolutionize your studying experience. Powered by advanced AI technology, Bliss AI aims to make learning smarter, more efficient, and tailored to your individual needs.
-You can download it for free from the Google Play Store!
+You can download it for free from the Google Play Store:
+https://play.google.com/store/apps/details?id=com.jesai.blissai
+
 
 ## Features
 
