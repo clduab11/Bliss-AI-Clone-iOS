@@ -39,4 +39,4 @@ chrisldukes@gmail.com
 
 ---
 
-Parallax Pal - Multiple Perspectives. Singular Insight.
+Parallax Pal, by Parallax Analytics, Copyright 2024 - Multiple Perspectives. Singular Insight.
