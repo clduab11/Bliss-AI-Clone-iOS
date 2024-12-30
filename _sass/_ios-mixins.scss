@@ -1,0 +1,142 @@
+// iOS Device Breakpoints
+$iphone-se: 375px;
+$iphone-mini: 375px;
+$iphone-pro: 390px;
+$iphone-plus: 428px;
+$iphone-max: 428px;
+$ipad-mini: 768px;
+$ipad-pro-11: 834px;
+$ipad-pro-12: 1024px;
+
+// iOS Safe Areas
+@mixin ios-safe-area-inset {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+// 3D Touch Interactions
+@mixin force-touch {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+@mixin haptic-feedback {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+// iOS Widget Styling
+@mixin ios-widget-container {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@mixin ios-widget-small {
+  width: 155px;
+  height: 155px;
+  @include ios-widget-container;
+}
+
+@mixin ios-widget-medium {
+  width: 329px;
+  height: 155px;
+  @include ios-widget-container;
+}
+
+@mixin ios-widget-large {
+  width: 329px;
+  height: 329px;
+  @include ios-widget-container;
+}
+
+// Siri Shortcuts Styling
+@mixin siri-shortcut-button {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2D0B5A, #12093E);
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg...%3E") no-repeat center;
+    background-size: contain;
+  }
+}
+
+// iOS Animations
+@mixin ios-spring-animation {
+  transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@mixin ios-modal-animation {
+  animation: modal-slide-up 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  
+  @keyframes modal-slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+// iOS System Styles
+@mixin ios-blur-background {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, 0.72);
+}
+
+@mixin ios-system-font {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Device-Specific Styles
+@mixin iphone-notch-padding {
+  @media only screen and (device-width: $iphone-pro) {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+@mixin ipad-sidebar {
+  @media only screen and (min-width: $ipad-pro-11) {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+// iOS Dynamic Type
+@mixin ios-dynamic-type {
+  font-size: -apple-system-body;
+  
+  @supports (-webkit-touch-callout: none) {
+    font-size: -apple-system-body;
+  }
+}
+
+// iOS Gesture Handling
+@mixin ios-swipe-actions {
+  touch-action: pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}

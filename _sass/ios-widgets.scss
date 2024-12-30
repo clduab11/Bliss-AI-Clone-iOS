@@ -1,0 +1,188 @@
+@import 'ios-mixins';
+
+// Widget Container Base Styles
+.widget-container {
+  @include ios-widget-container;
+  @include ios-safe-area-inset;
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
+  }
+}
+
+// Widget Layout Grid System
+.widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+  padding: 16px;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Widget Content Styles
+.widget-content {
+  padding: 12px;
+
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: $ios-system-blue;
+
+    @media (prefers-color-scheme: dark) {
+      color: lighten($ios-system-blue, 10%);
+    }
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.4;
+    color: $ios-system-gray;
+    margin: 0;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-secondary;
+    }
+  }
+}
+
+// Widget Animations
+@keyframes widget-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.widget-animate {
+  animation: widget-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: opacity, transform, filter;
+}
+
+// Widget Interactive Elements
+.widget-button {
+  background-color: $ios-system-blue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken($ios-system-blue, 10%);
+  }
+
+  &:active {
+    background-color: darken($ios-system-blue, 15%);
+    transform: scale(0.98);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: lighten($ios-system-blue, 5%);
+
+    &:hover {
+      background-color: lighten($ios-system-blue, 10%);
+    }
+
+    &:active {
+      background-color: lighten($ios-system-blue, 15%);
+    }
+  }
+}
+
+// Widget States
+.widget-loading {
+  opacity: 0.7;
+  pointer-events: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 2px solid rgba($ios-system-blue, 0.2);
+    border-top-color: $ios-system-blue;
+    border-radius: 50%;
+    animation: widget-spin 0.8s linear infinite;
+  }
+}
+
+@keyframes widget-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Widget Responsive Adjustments
+@media only screen and (max-width: 992px) {
+  .widget-container {
+    padding: 12px;
+  }
+
+  .widget-content {
+    padding: 8px;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+// Widget Accessibility
+.widget-container:focus-within {
+  outline: 2px solid $ios-system-blue;
+  outline-offset: 2px;
+}
+
+.widget-container[aria-expanded="true"] {
+  grid-row: span 2;
+}
+
+// Dynamic Island Widget Styles
+.dynamic-island-widget {
+  @include dynamic-island-container;
+  @include ios-blur-background;
+  border-radius: 20px;
+  margin: 0 auto;
+  max-width: calc(100% - 32px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.expanded {
+    border-radius: 30px;
+    padding: 20px;
+  }
+
+  @media only screen and (max-width: $iphone-14-pro) {
+    max-width: calc(100% - 24px);
+  }
+}

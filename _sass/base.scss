@@ -1,9 +1,22 @@
 // Layout and grids
 $content-width: 1170px;
 
+@import 'ios-mixins';
+
+// iOS System Colors
+$ios-primary: #007AFF;
+$ios-background: #ffffff;
+$ios-text: #000000;
+$ios-secondary: #666666;
+
+// Dark Mode Colors
+$ios-dark-background: #000000;
+$ios-dark-text: #ffffff;
+$ios-dark-secondary: #8E8E93;
 // Fonts and sizes
 $font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $primary-text-color: #000000;
+@include ios-system-font;
 
 html {
 	font-size: 62.5%;
@@ -16,6 +29,12 @@ body {
 	background-color: $body-color;
 }
 
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: $ios-dark-background;
+		color: $ios-dark-text;
+	}
+}
 .subPageBody {
 	background-color: #fff;
 }
@@ -39,12 +58,28 @@ body {
 	background-color: $body-color;
 }
 
+// iOS-specific body enhancements
+body {
+	@include ios-safe-area-inset;
+	@include ios-dynamic-type;
+	@include ios-swipe-actions;
+}
+
 a:link,
 a:hover,
 a:visited,
 a:active {
 	color: $accent-color;
 	text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	a:link,
+	a:hover,
+	a:visited,
+	a:active {
+		color: $ios-primary;
+	}
 }
 
 // Shadows

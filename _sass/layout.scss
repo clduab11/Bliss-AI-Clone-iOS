@@ -1,17 +1,18 @@
+@import 'ios-mixins';
+
 .imageWrapper {
 	// Sets the background image in the header area
 	height: 2000px;
 	background:
 		linear-gradient(rgba($image-overlay-color, $image-overlay-transparency),
 			rgba($image-overlay-color, $image-overlay-transparency)),
-
 		url($header-image);
-
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top;
 	border-radius: 0px 0px 40px 40px;
-
+	@include ios-safe-area-inset;
+	@include ios-blur-background;
 }
 
 .headerBackground {
@@ -19,10 +20,11 @@
 	background-color: rgba($header-color, $header-transparency);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $iphone-plus) {
 
 	.headerBackground {
 		height: 80px;
+		@include ios-blur-background;
 	}
 
 }
@@ -385,23 +387,28 @@ nav>ul li a:active {
 	background-size: 400px auto;
 	background-repeat: no-repeat;
 	margin-top: 68px;
+	@include dynamic-island-padding;
+	@include ios-safe-area-inset;
 }
 
 .iphoneScreen {
-	width: 349px;
+	width: 375px;
 	-webkit-clip-path: url(#screenMask);
 	clip-path: url(#screenMask);
-	margin-left: 26px;
-	margin-top: 23px;
+	margin-left: 24px;
+	margin-top: 25px;
+	border-radius: 40px;
 }
 
 .videoContainer {
-	width: 349px;
-	height: 755px;
-	-webkit-clip-path: url(#screenMask);
-	clip-path: url(#screenMask);
-	margin-left: 26px;
-	margin-top: 23px;
+  width: 375px;
+  height: 812px;
+  -webkit-clip-path: url(#screenMask);
+  clip-path: url(#screenMask);
+  margin-left: 24px;
+  margin-top: 25px;
+  border-radius: 40px;
+  overflow: hidden;
 }
 
 .videoContainer>video {
@@ -409,7 +416,7 @@ nav>ul li a:active {
 	height: 755px;
 }
 
-@media only screen and (max-width: 1070px) {
+@media only screen and (max-width: $iphone-14-pro-max) {
 
 	.iphonePreview {
 		background-size: 370px auto;
@@ -435,7 +442,7 @@ nav>ul li a:active {
 
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: $iphone-14-plus) {
 
 	.iphonePreview {
 		display: flex;
@@ -481,6 +488,7 @@ nav>ul li a:active {
 	flex-grow: 1;
 	flex-wrap: wrap;
 	margin-top: 93px;
+	@include ios-widget-container;
 }
 
 .feature {
@@ -489,6 +497,7 @@ nav>ul li a:active {
 	padding-left: 15px;
 	padding-right: 15px;
 	width: calc(100%/3);
+	@include haptic-feedback;
 }
 
 .feature:nth-child(-n+3) {
@@ -612,6 +621,7 @@ footer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding-bottom: env(safe-area-inset-bottom);
 }
 
 .footerText {

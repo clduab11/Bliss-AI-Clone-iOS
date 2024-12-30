@@ -1,0 +1,140 @@
+// Import iOS mixins
+@import 'ios-mixins';
+
+// iOS-specific variables
+$ios-corner-radius: 13px;
+$ios-button-height: 44px;
+$ios-list-spacing: 20px;
+$ios-transition-duration: 0.3s;
+$ios-dynamic-island-height: 37px;
+$ios-dynamic-island-expanded: 63px;
+
+// iOS Native Components
+.ios-button {
+    @include ios-system-font;
+    height: $ios-button-height;
+    border-radius: $ios-corner-radius;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $ios-system-blue;
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: opacity $ios-transition-duration ease;
+    
+    &:active {
+        opacity: 0.7;
+    }
+    
+    &.secondary {
+        background-color: rgba($ios-system-gray, 0.1);
+        color: $ios-system-blue;
+    }
+}
+
+// iOS List Styles
+.ios-list {
+    @include ios-safe-area-inset;
+    background-color: $ios-system-background;
+    border-radius: $ios-corner-radius;
+    
+    .list-item {
+        padding: $ios-list-spacing;
+        border-bottom: 1px solid rgba($ios-system-gray, 0.2);
+        display: flex;
+        align-items: center;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        .item-icon {
+            margin-right: 15px;
+            width: 29px;
+            height: 29px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $feature-icons-background-color;
+            
+            svg {
+                width: 18px;
+                height: 18px;
+                color: $feature-icons-foreground-color;
+            }
+        }
+    }
+}
+
+// Feature List Enhancements
+.features {
+    @include ios-safe-area-inset;
+    @include dynamic-island-padding;
+    padding-top: calc(#{$ios-dynamic-island-height} + env(safe-area-inset-top));
+    
+    .feature {
+        @include ios-haptic-feedback;
+        @include ios-widget-container;
+        transition: transform $ios-transition-duration ease;
+        margin-bottom: $ios-list-spacing;
+        
+        &:active {
+            transform: scale(0.98);
+        }
+        
+        .feature-icon {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: env(safe-area-inset-top);
+            
+            svg {
+                transition: transform $ios-transition-duration ease;
+            }
+        }
+        
+        &:hover .feature-icon svg {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Dark Mode Support
+@media (prefers-color-scheme: dark) {
+    .ios-list {
+        background-color: rgba(30, 30, 30, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        
+        .list-item {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+    
+    .ios-button {
+        &.secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #0A84FF;
+        }
+    }
+    
+    .features .feature {
+        background-color: rgba(30, 30, 30, 0.8);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+// Accessibility Features
+.ios-button, .list-item {
+    &:focus-visible {
+        outline: 2px solid $ios-system-blue;
+        outline-offset: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ios-button, .feature, .feature-icon svg {
+        transition: none;
+    }
+}

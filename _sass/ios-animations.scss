@@ -1,0 +1,206 @@
+// Animation Variables
+$animation-duration: 0.3s;
+$animation-timing: cubic-bezier(0.4, 0.0, 0.2, 1);
+$spring-timing: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$dynamic-island-duration: 0.28s;
+$dynamic-island-spring: cubic-bezier(0.42, 0, 0.58, 1);
+$safe-transform-origin: env(safe-area-inset-top) center;
+
+// Smooth Scrolling
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Page Transition Animations
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Dynamic Island Animations
+@keyframes dynamicIslandExpand {
+  from {
+    transform: scale(1);
+    border-radius: 20px;
+  }
+  to {
+    transform: scale(1.1);
+    border-radius: 25px;
+  }
+}
+
+@keyframes dynamicIslandCollapse {
+  from {
+    transform: scale(1.1);
+    border-radius: 25px;
+  }
+  to {
+    transform: scale(1);
+    border-radius: 20px;
+  }
+}
+
+// iOS-style Button Press Animation
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+
+// Utility Animation Classes
+.animate-in {
+  animation: fadeIn $animation-duration $animation-timing forwards;
+}
+
+.slide-up {
+  animation: slideUp $animation-duration $animation-timing forwards;
+}
+
+.scale-in {
+  animation: scaleIn $animation-duration $spring-timing forwards;
+}
+
+// Interactive Elements
+.interactive {
+  transition: transform $animation-duration $animation-timing;
+  
+  &:active {
+    animation: buttonPress 0.4s $spring-timing;
+  }
+}
+
+// Feature Card Animations
+.feature {
+  transition: transform $animation-duration $animation-timing,
+              box-shadow $animation-duration $animation-timing;
+              
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Navigation Link Animations
+nav a {
+  transition: opacity $animation-duration $animation-timing,
+              color $animation-duration $animation-timing;
+              
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// App Icon Hover Effect
+.appIconShadow {
+  transition: transform $animation-duration $spring-timing;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Download Button Animations
+.downloadButtonsContainer {
+  a {
+    transition: transform $animation-duration $spring-timing;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+    
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+// Header Background Blur Animation
+.headerBackground {
+  transition: background-color $animation-duration $animation-timing,
+              backdrop-filter $animation-duration $animation-timing;
+  @include ios-safe-area-inset;
+  
+  @supports (backdrop-filter: blur(20px)) {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+// Feature Icon Animation
+.iconBack, .iconTop {
+  transition: transform $animation-duration $spring-timing;
+}
+
+.feature:hover {
+  .iconBack {
+    transform: scale(1.1);
+  }
+  
+  .iconTop {
+    transform: scale(1.15);
+  }
+}
+
+// Social Icons Animation
+.footerIcons a {
+  transition: transform $animation-duration $spring-timing;
+  
+  &:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+// Dynamic Island Interaction Classes
+.dynamic-island {
+  @include dynamic-island-container;
+  transition: all $dynamic-island-duration $dynamic-island-spring;
+  transform-origin: $safe-transform-origin;
+  
+  &.expanded {
+    animation: dynamicIslandExpand $dynamic-island-duration $dynamic-island-spring forwards;
+  }
+  
+  &.collapsed {
+    animation: dynamicIslandCollapse $dynamic-island-duration $dynamic-island-spring forwards;
+  }
+}
+
+// Reduced Motion Preferences
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  
+  .dynamic-island {
+    transition: none;
+    animation: none;
+  }
+}

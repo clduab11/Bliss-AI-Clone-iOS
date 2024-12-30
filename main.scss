@@ -2,10 +2,60 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+@import 'ios-mixins';
+
+// iOS System Colors
+$ios-system-blue: {{ site.topbar_color }};
+$ios-system-background: {{ site.body_background_color }};
+$ios-system-gray: #8E8E93;
+
+// Modern iOS System Colors
+$ios-system-gray2: #636366;
+$ios-system-gray3: #48484A;
+$ios-system-gray4: #3A3A3C;
+$ios-system-gray5: #2C2C2E;
+$ios-system-gray6: #1C1C1E;
+$ios-system-label: #000000;
+$ios-system-secondary-label: #3C3C43;
+// Dark Mode Support
+$dark-background: #000000;
+$dark-text: #FFFFFF;
+$dark-secondary: #8E8E93;
+
+// Modern Dark Mode Colors
+$dark-system-background: #1C1C1E;
+$dark-system-secondary-background: #2C2C2E;
+$dark-system-label: #FFFFFF;
+$dark-system-secondary-label: rgba(255, 255, 255, 0.6);
+$dark-system-tertiary-label: rgba(255, 255, 255, 0.3);
+// Device Frame Colors
+$device-frame-colors: (
+  'pacific-blue': 'assets/devices/iphone-14-pro-blue.png',
+  'graphite': 'assets/devices/iphone-14-pro-graphite.png',
+  'gold': 'assets/devices/iphone-14-pro-gold.png',
+  'silver': 'assets/devices/iphone-14-pro-silver.png',
+  'space-black': 'assets/devices/iphone-14-pro-black.png',
+  'purple': 'assets/devices/iphone-14-purple.png',
+  'midnight': 'assets/devices/iphone-14-midnight.png',
+  'starlight': 'assets/devices/iphone-14-starlight.png'
+);
+
+$device-frame-dark-colors: (
+  'pacific-blue': 'assets/devices/dark/iphone-14-pro-blue.png',
+  'graphite': 'assets/devices/dark/iphone-14-pro-graphite.png',
+  'gold': 'assets/devices/dark/iphone-14-pro-gold.png',
+  'silver': 'assets/devices/dark/iphone-14-pro-silver.png',
+  'space-black': 'assets/devices/dark/iphone-14-pro-black.png',
+  'purple': 'assets/devices/dark/iphone-14-purple.png',
+  'midnight': 'assets/devices/dark/iphone-14-midnight.png',
+  'starlight': 'assets/devices/dark/iphone-14-starlight.png'
+);
 $body-color: {{ site.body_background_color }};
 
 $header-image: "{{ site.cover_image }}";
-$device-color: "assets/{{ site.device_color }}.png";
+$device-color: if({{ site.dark_mode }}, 
+  map-get($device-frame-dark-colors, {{ site.device_color }}),
+  map-get($device-frame-colors, {{ site.device_color }}));
 
 $accent-color: {{ site.link_color }};
 
@@ -30,7 +80,14 @@ $feature-icons-background-color: {{ site.feature_icons_background_color }};
 $social-icons-foreground-color: {{ site.social_icons_foreground_color }};
 $social-icons-background-color: {{ site.social_icons_background_color }};
 
-@import 
+@import
     "base",
     "layout",
-    "github-markdown"
+    "github-markdown";
+
+@supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
+  @import
+    "ios-features",
+    "ios-widgets",
+    "ios-animations";
+}

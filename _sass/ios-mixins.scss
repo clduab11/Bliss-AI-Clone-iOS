@@ -1,0 +1,146 @@
+// iOS Safe Area Insets
+@mixin ios-safe-area-inset {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+// iOS Blur Background
+@mixin ios-blur-background {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+// iOS System Font
+@mixin ios-system-font {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+// iOS Widget Container
+@mixin ios-widget-container {
+  border-radius: 13px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(30, 30, 30, 0.8);
+  }
+}
+
+// Haptic Feedback
+@mixin haptic-feedback {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-in-out;
+  }
+}
+
+// iPhone Notch Padding
+@mixin iphone-notch-padding {
+  padding-top: max(20px, env(safe-area-inset-top));
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+}
+
+// iOS Dynamic Type Support
+@mixin ios-dynamic-type {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// iOS Swipe Actions
+@mixin ios-swipe-actions {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+// iOS Button Style
+@mixin ios-button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+  
+  &:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-in-out;
+  }
+}
+
+// iOS List Style
+@mixin ios-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// iOS Card Style
+@mixin ios-card {
+  border-radius: 13px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: #1c1c1e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Modern iOS Device Variables
+$iphone-14-pro: 393px;
+$iphone-14-pro-max: 430px;
+$iphone-14: 390px;
+$iphone-14-plus: 428px;
+$iphone-13-mini: 375px;
+
+// Dynamic Island Padding
+@mixin dynamic-island-padding {
+  padding-top: max(54px, env(safe-area-inset-top));
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+}
+
+// Dynamic Island Container
+@mixin dynamic-island-container {
+  position: relative;
+  z-index: 1000;
+  margin-top: env(safe-area-inset-top);
+  min-height: 37px; // Standard Dynamic Island height
+  
+  &.expanded {
+    min-height: 63px; // Expanded Dynamic Island height
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  
+  @media (prefers-color-scheme: light) {
+    background-color: rgba(255, 255, 255, 0.65);
+  }
+  
+  @supports (backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+  }
+}
