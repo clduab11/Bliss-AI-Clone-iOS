@@ -31,12 +31,11 @@ Forthcoming link to the App Store soon!
 - **Daily Reminders**: Customizable notifications to keep you on track.
 
 ## Technology
-- Powered by default by SOTA model, Google's Gemini 2.0 Flash!
+- Powered by default with SOTA (state-of-the-art) model, Gemini 2.0 Flash!
 - OpenAI-compatible endpoints for containerized local model support (e.g., Ollama or LM Studio in a Docker container) (In Progress!)
-- Anthropic-compatible endpoints* 
-- OpenAI endpoints for GPT support*
+- Anthropic-compatible endpoints* (requires subscription)
+- OpenAI endpoints for GPT support* (requires subscription)
 - Fine-tuned for optimal mentor-like support
-** - _Requires certain subscription level_
 
 ## Privacy and Security
 - Limited ads for free users (unfortunately, free users still generate API costs, I try to keep it fair!)
