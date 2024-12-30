@@ -1,0 +1,270 @@
+// Footer base styles
+.footer {
+  background-color: $bg-dark;
+  color: $text-inverse;
+  padding: $spacing-16 0 $spacing-8;
+  position: relative;
+  overflow: hidden;
+  
+  // Footer container
+  &__container {
+    @include container;
+    position: relative;
+    z-index: 2;
+  }
+  
+  // Footer grid
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: $spacing-8;
+    margin-bottom: $spacing-16;
+    
+    @include mobile-only {
+      grid-template-columns: 1fr;
+      gap: $spacing-8;
+    }
+  }
+  
+  // Brand section
+  &__brand {
+    .logo {
+      display: inline-block;
+      margin-bottom: $spacing-4;
+      font-size: $font-size-xl;
+      font-weight: 700;
+      color: $text-inverse;
+      text-decoration: none;
+      
+      &:hover {
+        color: rgba($text-inverse, 0.9);
+      }
+    }
+    
+    .description {
+      color: rgba($text-inverse, 0.7);
+      margin-bottom: $spacing-6;
+      line-height: 1.6;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: $spacing-4;
+      
+      a {
+        color: rgba($text-inverse, 0.7);
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: $primary-color;
+        }
+        
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+  
+  // Footer navigation
+  &__nav {
+    h4 {
+      font-size: $font-size-lg;
+      font-weight: 600;
+      margin-bottom: $spacing-4;
+      color: $text-inverse;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: $spacing-2;
+        
+        a {
+          color: rgba($text-inverse, 0.7);
+          text-decoration: none;
+          transition: color 0.2s ease;
+          
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+  
+  // Newsletter form
+  &__newsletter {
+    h4 {
+      font-size: $font-size-lg;
+      font-weight: 600;
+      margin-bottom: $spacing-4;
+      color: $text-inverse;
+    }
+    
+    p {
+      color: rgba($text-inverse, 0.7);
+      margin-bottom: $spacing-4;
+    }
+    
+    form {
+      display: flex;
+      gap: $spacing-2;
+      
+      @include mobile-only {
+        flex-direction: column;
+      }
+      
+      input[type="email"] {
+        @include form-input;
+        background-color: rgba($text-inverse, 0.1);
+        border-color: rgba($text-inverse, 0.2);
+        color: $text-inverse;
+        
+        &::placeholder {
+          color: rgba($text-inverse, 0.5);
+        }
+        
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+      
+      button {
+        @include button-primary;
+        white-space: nowrap;
+      }
+    }
+  }
+  
+  // Bottom bar
+  &__bottom {
+    padding-top: $spacing-8;
+    border-top: 1px solid rgba($text-inverse, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @include mobile-only {
+      flex-direction: column;
+      gap: $spacing-4;
+      text-align: center;
+    }
+    
+    .copyright {
+      color: rgba($text-inverse, 0.7);
+      font-size: $font-size-sm;
+    }
+    
+    .legal-links {
+      display: flex;
+      gap: $spacing-4;
+      
+      @include mobile-only {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      a {
+        color: rgba($text-inverse, 0.7);
+        text-decoration: none;
+        font-size: $font-size-sm;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  
+  // Background decoration
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.1;
+    background-image: radial-gradient(
+      circle at 50% 0,
+      rgba($primary-color, 0.3),
+      transparent 70%
+    );
+  }
+}
+
+// Language selector
+.language-selector {
+  position: relative;
+  display: inline-block;
+  
+  select {
+    appearance: none;
+    background: transparent;
+    border: 1px solid rgba($text-inverse, 0.2);
+    color: rgba($text-inverse, 0.7);
+    padding: $spacing-2 $spacing-8 $spacing-2 $spacing-3;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    cursor: pointer;
+    
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    right: $spacing-3;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgba($text-inverse, 0.7);
+    border-left: 0;
+    border-top: 0;
+    transform: translateY(-50%) rotate(45deg);
+    pointer-events: none;
+  }
+}
+
+// Back to top button
+.back-to-top {
+  position: fixed;
+  bottom: $spacing-6;
+  right: $spacing-6;
+  background-color: $primary-color;
+  color: $text-inverse;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+} 

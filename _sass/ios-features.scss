@@ -138,3 +138,37 @@ $ios-dynamic-island-expanded: 63px;
         transition: none;
     }
 }
+
+.feature {
+  @include glass-effect;
+  @include smooth-transition;
+  padding: 2rem;
+  border-radius: 8px;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  &__icon {
+    @include flex-center;
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+  
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  &__description {
+    color: rgba($text-color, 0.8);
+    line-height: 1.6;
+  }
+}
+
+.features-grid {
+  @include grid-auto-fit;
+  @include responsive-padding;
+}

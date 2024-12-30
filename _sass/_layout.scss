@@ -1,0 +1,73 @@
+.page-content {
+  padding: $spacing-unit * 4 0;
+  
+  @include responsive($breakpoint-sm) {
+    padding: $spacing-unit * 6 0;
+  }
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    );
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: $spacing-unit;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: $spacing-unit;
+      
+      @include responsive($breakpoint-md) {
+        font-size: 4rem;
+      }
+    }
+    
+    .lead {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-unit;
+      
+      @include responsive($breakpoint-md) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.features-section,
+.technology-section,
+.privacy-section {
+  padding: $spacing-unit * 4 0;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: $spacing-unit * 3;
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-unit * 2;
+  padding: $spacing-unit;
+} 

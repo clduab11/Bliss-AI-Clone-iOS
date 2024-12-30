@@ -1,29 +1,31 @@
 ---
 layout: page
-title: What's New
+title: Updates
 include_in_header: true
 ---
 
-# Changelog
+# Project Updates
 
-<br>
+### Latest Release
+## Version 1.0.0 | {{ 'now' | date: "%d-%m-%Y" }}
 
-### `Latest`
-# **Version 2 (Blissfully Enhanced)** | 25-8-24
-1. You can now save messages! Long press on the edge of any message to save it. Your saved messages can be found under More > Saved.
-You can also long press on the message's text itself to select, copy, and share it :)
+Initial Features:
+- Advanced LaTeX rendering for math, physics, chemistry, law, economics, history
+- Self-learning memory system that adapts to your style
+- Hyper-personalized learning with curriculum tailoring
+- Free unlimited chats with AI tutor
+- Multi-modal interaction (images and voice)
+- Study scheduler with intelligent time allocation
+- Performance analytics with actionable insights
+- Gamified task management system
+- Integration with Gemini 2.0 Flash
+- Privacy-first approach with encrypted data
 
-2. Improved overall UX.
+### Coming Soon
 
-3. Improved performance of the Marks Analyser
-
-PS: In about a week, Bliss AI will be moving out of closed testing and will be available on the public Play Store!
-
-Thank you for being an early tester :D
-
-
-# **Version 1 (Blissfully Out)** | 01-08-24
-This is the first version of Bliss AI that's out to the public!
-After 65 (yes, 65) internal testing versions :)
-And there's more to come.
+- OpenAI-compatible endpoints for local models
+- Enhanced Anthropic model integration
+- Additional subject matter expertise
+- Improved mobile experience
+- Dark mode support
 <br>

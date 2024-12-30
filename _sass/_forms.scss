@@ -1,0 +1,238 @@
+// Form container
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+// Form group
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+// Labels
+.form-label {
+  font-weight: 500;
+  color: $text-color;
+  
+  &.required::after {
+    content: "*";
+    color: $error-color;
+    margin-left: $spacing-1;
+  }
+}
+
+// Text inputs
+.form-input {
+  @include form-input;
+  height: 2.5rem;
+  
+  &--error {
+    border-color: $error-color;
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($error-color, 0.1);
+    }
+  }
+  
+  &--success {
+    border-color: $success-color;
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($success-color, 0.1);
+    }
+  }
+}
+
+// Textareas
+.form-textarea {
+  @extend .form-input;
+  height: auto;
+  min-height: 100px;
+  resize: vertical;
+}
+
+// Select inputs
+.form-select {
+  @extend .form-input;
+  padding-right: $spacing-8;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right $spacing-3 center;
+  background-size: 16px;
+}
+
+// Checkboxes and radios
+.form-checkbox,
+.form-radio {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  cursor: pointer;
+  
+  input {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    
+    &[type="checkbox"] {
+      border-radius: $radius-sm;
+    }
+    
+    &[type="radio"] {
+      border-radius: 50%;
+    }
+  }
+}
+
+// Checkbox/radio groups
+.form-check-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+// Help text
+.form-help {
+  font-size: $font-size-sm;
+  color: $text-light;
+  margin-top: $spacing-1;
+}
+
+// Error message
+.form-error {
+  font-size: $font-size-sm;
+  color: $error-color;
+  margin-top: $spacing-1;
+}
+
+// Form actions
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-4;
+  margin-top: $spacing-6;
+}
+
+// Input groups
+.input-group {
+  display: flex;
+  align-items: center;
+  
+  .form-input {
+    border-radius: 0;
+    
+    &:first-child {
+      border-top-left-radius: $radius-md;
+      border-bottom-left-radius: $radius-md;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $radius-md;
+      border-bottom-right-radius: $radius-md;
+    }
+  }
+  
+  .input-group-text {
+    padding: $spacing-2 $spacing-3;
+    background-color: $bg-secondary;
+    border: 1px solid $border-medium;
+    color: $text-light;
+    
+    &:first-child {
+      border-right: 0;
+      border-top-left-radius: $radius-md;
+      border-bottom-left-radius: $radius-md;
+    }
+    
+    &:last-child {
+      border-left: 0;
+      border-top-right-radius: $radius-md;
+      border-bottom-right-radius: $radius-md;
+    }
+  }
+}
+
+// File input
+.form-file {
+  position: relative;
+  
+  input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .file-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    padding: $spacing-2 $spacing-4;
+    border: 2px dashed $border-medium;
+    border-radius: $radius-md;
+    color: $text-light;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+// Search input
+.form-search {
+  position: relative;
+  
+  .form-input {
+    padding-left: $spacing-10;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: $spacing-3;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $text-light;
+    pointer-events: none;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .form-input,
+  .form-select {
+    background-color: lighten($bg-dark, 5%);
+    border-color: rgba($text-inverse, 0.2);
+    color: $text-inverse;
+    
+    &::placeholder {
+      color: rgba($text-inverse, 0.5);
+    }
+  }
+  
+  .input-group-text {
+    background-color: lighten($bg-dark, 10%);
+    border-color: rgba($text-inverse, 0.2);
+    color: rgba($text-inverse, 0.7);
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .form-input,
+  .form-select {
+    border-width: 2px;
+  }
+  
+  .form-label {
+    font-weight: 700;
+  }
+} 

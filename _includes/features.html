@@ -1,26 +1,33 @@
-<div class="features">
-
-    {% for feature in site.features %}
-
-    {% if feature.title %}
-    <div class="feature">
-        <div>
-            <span class="fa-stack fa-1x">
-                <i class="iconBack fas fa-circle fa-stack-2x"></i>
-                <i class="iconTop fas fa-{{ feature.fontawesome_icon_name }} fa-stack-1x"></i>
-            </span>
-        </div>
-        <div class="featureText">
-            <h3>
-                {{ feature.title }}
-            </h3>
-            <p>
-                {{ feature.description }}
-            </p>
-        </div>
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">Core Features</h2>
+    <div class="features-grid">
+      {% for feature in site.data.features %}
+        {% if feature.category == "core" %}
+          <div class="feature fade-in">
+            <div class="feature__icon">
+              <i class="fas fa-{{ feature.icon }}"></i>
+            </div>
+            <h3 class="feature__title">{{ feature.title }}</h3>
+            <p class="feature__description">{{ feature.description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
-    {% endif %}
 
-    {% endfor %}
-
-</div>
+    <h2 class="section-title">Technology</h2>
+    <div class="features-grid">
+      {% for feature in site.data.features %}
+        {% if feature.category == "technology" %}
+          <div class="feature fade-in">
+            <div class="feature__icon">
+              <i class="fas fa-{{ feature.icon }}"></i>
+            </div>
+            <h3 class="feature__title">{{ feature.title }}</h3>
+            <p class="feature__description">{{ feature.description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

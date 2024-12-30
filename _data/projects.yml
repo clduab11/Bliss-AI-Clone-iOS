@@ -1,0 +1,15 @@
+# New file for project data
+- title: Project Alpha
+  description: A responsive web application showcasing modern CSS Grid layouts
+  image: /assets/images/projects/project-1.jpg
+  url: /projects/alpha
+
+- title: Project Beta
+  description: Interactive data visualization using D3.js and SVG animations
+  image: /assets/images/projects/project-2.jpg
+  url: /projects/beta
+
+- title: Project Gamma
+  description: Progressive Web App with offline capabilities and push notifications
+  image: /assets/images/projects/project-3.jpg
+  url: /projects/gamma 

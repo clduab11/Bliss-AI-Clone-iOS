@@ -1,0 +1,34 @@
+# Core Features
+- title: Advanced Subject Support
+  description: Crystal-clear explanations for math, physics, chemistry, law, economics, history, and more
+  icon: book-open
+
+- title: Self-Learning System
+  description: Adapts to your learning style and improves over time
+  icon: brain
+
+- title: Study Scheduler
+  description: Get personalized study plans with intelligent time allocation
+  icon: calendar
+
+- title: Performance Analytics
+  description: Transform exam scores into actionable improvement strategies
+  icon: chart-line
+
+- title: Gamified Tasks
+  description: Stay motivated with game-like task management
+  icon: trophy
+
+# Technology
+- title: Powered by Gemini 2.0 Flash
+  description: State-of-the-art AI model for optimal performance
+  icon: bolt
+
+- title: Multiple Model Support
+  description: OpenAI, Anthropic, and local model compatibility
+  icon: network-wired
+
+# Privacy
+- title: Privacy First
+  description: Your data stays private, encrypted, and secure
+  icon: shield-halved 

@@ -1,0 +1,180 @@
+---
+---
+
+// Import variables and mixins first
+@import "variables";
+@import "mixins";
+
+// Reset and base styles
+@import "reset";
+@import "base";
+
+// Components
+@import "components";
+@import "buttons";
+@import "cards";
+@import "forms";
+@import "icons";
+@import "navigation";
+
+// Layout
+@import "layout";
+@import "grid";
+@import "header";
+@import "footer";
+
+// Features and sections
+@import "hero";
+@import "features";
+@import "subjects";
+@import "testimonials";
+@import "pricing";
+@import "faq";
+
+// Utilities
+@import "animations";
+@import "utilities";
+@import "github-markdown";
+
+// Subject-specific styles
+.math-section {
+  @include subject-card($math-color);
+  
+  .feature-icon {
+    color: $math-color;
+  }
+}
+
+.law-section {
+  @include subject-card($law-color);
+  
+  .feature-icon {
+    color: $law-color;
+  }
+}
+
+.economics-section {
+  @include subject-card($economics-color);
+  
+  .feature-icon {
+    color: $economics-color;
+  }
+}
+
+.history-section {
+  @include subject-card($history-color);
+  
+  .feature-icon {
+    color: $history-color;
+  }
+}
+
+// Animation classes
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  
+  &.delay-1 { animation-delay: 0.2s; }
+  &.delay-2 { animation-delay: 0.4s; }
+  &.delay-3 { animation-delay: 0.6s; }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.6s ease-out forwards;
+  
+  &.delay-1 { animation-delay: 0.2s; }
+  &.delay-2 { animation-delay: 0.4s; }
+  &.delay-3 { animation-delay: 0.6s; }
+}
+
+// Responsive utilities
+@media (max-width: $breakpoint-md) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+// Print styles
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0000EE;
+    --text-color: #000000;
+    --background-color: #FFFFFF;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #{lighten($primary-color, 10%)};
+    --text-color: #{$text-inverse};
+    --background-color: #{$bg-dark};
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .card {
+    background-color: lighten($bg-dark, 5%);
+  }
+}
+
+// Focus styles for accessibility
+:focus {
+  @include focus-ring;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 6px;
+  border: 3px solid $bg-secondary;
+  
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
+
+// Motion-reduced preferences
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} 

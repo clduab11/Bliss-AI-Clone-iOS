@@ -1,0 +1,22 @@
+<!-- Add privacy-focused analytics -->
+<script>
+  // Only load analytics if user has consented
+  if (localStorage.getItem('analytics-consent') === 'true') {
+    // Simple privacy-focused analytics
+    const sendPageView = () => {
+      const data = {
+        path: window.location.pathname,
+        referrer: document.referrer,
+        screenSize: `${window.innerWidth}x${window.innerHeight}`,
+        timestamp: new Date().toISOString()
+      };
+      
+      // Send to your privacy-focused analytics service
+      // No personal data collected
+      console.log('Analytics:', data);
+    };
+
+    // Track page views
+    document.addEventListener('DOMContentLoaded', sendPageView);
+  }
+</script> 

@@ -1,154 +1,33 @@
-#page title
-page_title                                : Parallax Pal                                           # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
+# Site Settings
+title: Parallax Pal
+description: A showcase of modern web development featuring parallax scrolling effects
+baseurl: ""
+url: ""
 
-# App Info
-ios_app_id                                : 6475847192                                # Required. Enter iOS app ID to automatically populate name, price and icons.
-ios_app_country                           : us                                        # Required outside USA. Enter 2 letter country code as in https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+# Navigation
+nav_items:
+  - title: Home
+    url: /
+  - title: Projects
+    url: /projects
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
 
-appstore_link                             : https://apps.apple.com/in/app/bliss-ai/id6475847192             # iOS App Store link
-playstore_link                            :                                          # Enter Google Play Store URL.
-presskit_download_link                    :                                         # Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file). 
-                                                                                      # Or upload your press kit file to assets and set path accordingly (e.g. "assets/your_press_kit.zip").
-
-app_icon                                  : assets/appicon.png                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
-app_name                                  : Parallax Pal                                          # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_price                                 : Free                                           # App price in the App Store
-
-app_description                           : Experience the power of our Parallax Pal on iOS - the revolutionary study companion featuring LaTeX rendering, advanced AI tutoring with Gemini 1.5 Pro, and seamless integration with iOS features. Enjoy iCloud sync, widgets, and Siri shortcuts alongside our core features like the AI Study Scheduler and Gamified To-Do List. Built exclusively for iPhone and iPad users, with no ads or tracking.
-
-enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
-
-
-
-# Information About Yourself
-your_name                                 : Chris Dukes (with inspiration from Bliss AI's Jesai Tarun)                                
-your_link                                 :                    
-your_city                                 :                                 
-email_address                             : chrisldukes@gmail.com
-facebook_username                         :                                           
-instagram_username                        : 
-twitter_username                          : 
-github_username                           : clduab11
-youtube_username                          :
-mastodon_link                             : 
-
-
-
-# Feature List                            Edit, add or remove features to be presented.
-features                                  :
-
-  - title                                 : Advanced AI Tutoring
-    description                           : Experience personalized learning with our AI tutor powered by Gemini 1.5 Pro, featuring LaTeX rendering and adaptive memory systems.
-    fontawesome_icon_name                 : brain
+# Features Section
+features:
+  - title: Smooth Parallax Effects
+    description: Optimized scrolling animations that respond naturally to user interaction
+    icon: layer-group
     
-  - title                                 : iOS Integration
-    description                           : Seamlessly integrated with iOS features including iCloud sync, widgets, and Siri shortcuts for an enhanced learning experience.
-    fontawesome_icon_name                 : mobile-alt
+  - title: Responsive Design
+    description: Seamlessly adapts to any screen size while maintaining performance
+    icon: mobile-alt
+    
+  - title: Modern Web Stack
+    description: Built with cutting-edge web standards and progressive enhancement
+    icon: code
 
-  - title                                 : AI Study Tools
-    description                           : Utilize our AI Study Scheduler and Marks Analyzer to optimize your learning journey with intelligent planning.
-    fontawesome_icon_name                 : calendar-check
-
-  - title                                 : 3D Touch Support
-    description                           : Quick actions and previews with 3D Touch integration for faster access to key features.
-    fontawesome_icon_name                 : hand-pointer
-
-  - title                                 : Privacy Focused
-    description                           : Your data stays private with local processing and iCloud backup. No ads, no tracking, just pure learning.
-    fontawesome_icon_name                 : shield-alt
-
-
-
-# Theme Settings
-topbar_color                              : "#007AFF"
-topbar_transparency                       : 0.9
-topbar_title_color                        : "#FFFFFF"
-
-cover_image                               : assets/headerimage.png                    # Replace with alternative image path or image URL.
-cover_overlay_color                       : "#000000"
-cover_overlay_transparency                : 0.7
-
-device_color                              : pacific-blue                             # Set to: pacific-blue, graphite, gold, silver, space-black, purple, midnight, starlight
-
-body_background_color                     : "#ffffff"
-
-link_color                                : "#007AFF"
-
-app_title_color                           : "#ffffff"
-app_price_color                           : "#ffffff"
-app_description_color                     : "#ffffff"
-
-feature_title_color                       : "#000000"
-feature_text_color                        : "#666666"
-
-feature_icons_foreground_color            : "#1d63ea"
-feature_icons_background_color            : "#e6e6e6"
-
-social_icons_foreground_color             : "#666666"
-social_icons_background_color             : "#e6e6e6"
-
-footer_text_color                         : "#666666"
-
-# Modern iOS Settings
-dark_mode                                : false                                    # Enable dark mode by default
-ios_system_background                     : "#FFFFFF"                                # iOS system background color
-ios_system_secondary_background           : "#F2F2F7"                                # iOS secondary background color
-ios_system_gray                          : "#8E8E93"                                # iOS system gray color
-ios_system_gray2                         : "#636366"                                # iOS system gray 2 color
-ios_system_gray3                         : "#48484A"                                # iOS system gray 3 color
-ios_corner_radius                        : "13px"                                   # iOS default corner radius
-ios_transition_duration                  : "0.3s"                                   # iOS animation duration
-
-# Dynamic Island Configuration
-dynamic_island_enabled                   : true                                     # Enable Dynamic Island features
-dynamic_island_animations                : true                                     # Enable Dynamic Island animations
-dynamic_island_notifications             : true                                     # Enable Dynamic Island notifications
-dynamic_island_interaction               : true                                     # Enable Dynamic Island user interaction
-
-# Modern Device Support
-safe_area_insets                         : true                                     # Enable safe area insets
-notch_support                            : true                                     # Enable notch support for older devices
-modern_gestures                          : true                                     # Enable modern iOS gesture support
-
-
-
-
-
-
-
-
-
-
-
-
-####################################################
-### Jekyll Configuration. No need to touch this. ###
-####################################################
-
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :compressed
-  sass_dir: _sass
-  load_paths:
-    - _sass
-    - node_modules
-
-# Exclude these files from your production _site
-exclude:
-  - LICENSE
-  - README.md
-  - CNAME
-  - node_modules
-  - package.json
-  - package-lock.json
-  - .sass-cache
-  - .jekyll-cache
-  - .DS_Store
-
-collections:
-  pages:
-    output: true
-    permalink: /:path/
-
-# Markdown rendering
+# Remove iOS-specific configurations
 markdown: kramdown

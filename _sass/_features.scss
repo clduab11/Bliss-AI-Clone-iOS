@@ -1,0 +1,240 @@
+// Features section base styles
+.features {
+  @include section-padding;
+  background-color: $bg-secondary;
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: lighten($bg-dark, 2%);
+  }
+  
+  // Section container
+  &__container {
+    @include container;
+  }
+  
+  // Section header
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto $spacing-16;
+    
+    h2 {
+      @include heading-2;
+      margin-bottom: $spacing-4;
+      
+      .highlight {
+        @include gradient-text;
+      }
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      color: $text-light;
+      line-height: 1.6;
+    }
+  }
+  
+  // Features grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-8;
+    
+    @include mobile-only {
+      grid-template-columns: 1fr;
+      gap: $spacing-6;
+    }
+  }
+  
+  // Individual feature
+  &__item {
+    background-color: $bg-primary;
+    border-radius: $radius-lg;
+    padding: $spacing-6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    @media (prefers-color-scheme: dark) {
+      background-color: lighten($bg-dark, 5%);
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-lg;
+    }
+    
+    // Feature icon
+    &-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: $spacing-4;
+      color: $primary-color;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+    // Feature title
+    &-title {
+      font-size: $font-size-xl;
+      font-weight: 600;
+      margin-bottom: $spacing-3;
+      color: $text-color;
+      
+      @media (prefers-color-scheme: dark) {
+        color: $text-inverse;
+      }
+    }
+    
+    // Feature description
+    &-description {
+      color: $text-light;
+      line-height: 1.6;
+      margin-bottom: $spacing-4;
+    }
+    
+    // Feature link
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-2;
+      color: $primary-color;
+      font-weight: 500;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+      
+      .icon {
+        transition: transform 0.2s ease;
+      }
+      
+      &:hover .icon {
+        transform: translateX(4px);
+      }
+    }
+  }
+  
+  // Subject-specific features
+  &--math {
+    .features__item-icon {
+      color: $math-color;
+    }
+  }
+  
+  &--law {
+    .features__item-icon {
+      color: $law-color;
+    }
+  }
+  
+  &--economics {
+    .features__item-icon {
+      color: $economics-color;
+    }
+  }
+  
+  &--history {
+    .features__item-icon {
+      color: $history-color;
+    }
+  }
+}
+
+// Feature comparison table
+.feature-comparison {
+  margin-top: $spacing-16;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: $spacing-4;
+      text-align: left;
+      border-bottom: 1px solid $border-light;
+      
+      @media (prefers-color-scheme: dark) {
+        border-color: rgba($text-inverse, 0.1);
+      }
+    }
+    
+    th {
+      font-weight: 600;
+      color: $text-color;
+      background-color: $bg-secondary;
+      
+      @media (prefers-color-scheme: dark) {
+        color: $text-inverse;
+        background-color: lighten($bg-dark, 3%);
+      }
+    }
+    
+    td {
+      vertical-align: top;
+      
+      .feature-check {
+        color: $success-color;
+      }
+      
+      .feature-cross {
+        color: $error-color;
+      }
+    }
+    
+    tr:hover td {
+      background-color: rgba($primary-color, 0.05);
+      
+      @media (prefers-color-scheme: dark) {
+        background-color: rgba($primary-color, 0.1);
+      }
+    }
+  }
+}
+
+// Feature highlights
+.feature-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-8;
+  margin-top: $spacing-16;
+  
+  @include mobile-only {
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+  }
+  
+  &__item {
+    display: flex;
+    gap: $spacing-4;
+    
+    .highlight-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      color: $primary-color;
+    }
+    
+    .highlight-content {
+      h4 {
+        font-size: $font-size-lg;
+        font-weight: 600;
+        margin-bottom: $spacing-2;
+        color: $text-color;
+        
+        @media (prefers-color-scheme: dark) {
+          color: $text-inverse;
+        }
+      }
+      
+      p {
+        color: $text-light;
+        line-height: 1.6;
+      }
+    }
+  }
+} 

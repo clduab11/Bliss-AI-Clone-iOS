@@ -1,100 +1,78 @@
-// Layout and grids
-$content-width: 1170px;
+// Update colors and styles to match app theme
+$primary-color: #2563eb;  // Main app blue
+$secondary-color: #3b82f6;
+$text-color: #1f2937;
+$background-color: #ffffff;
 
-@import 'ios-mixins';
+// Subject-specific colors
+$math-color: #2563eb;     // Blue
+$law-color: #7c3aed;      // Purple
+$economics-color: #059669; // Green
+$history-color: #b91c1c;  // Red
 
-// iOS System Colors
-$ios-primary: #007AFF;
-$ios-background: #ffffff;
-$ios-text: #000000;
-$ios-secondary: #666666;
+// Typography
+$font-family: 'Inter', system-ui, -apple-system, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
 
-// Dark Mode Colors
-$ios-dark-background: #000000;
-$ios-dark-text: #ffffff;
-$ios-dark-secondary: #8E8E93;
-// Fonts and sizes
-$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$primary-text-color: #000000;
-@include ios-system-font;
+// Layout
+$container-max-width: 1200px;
+$spacing-unit: 2rem;
+$border-radius: 8px;
 
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Mixins
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+@mixin responsive($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Base styles
 html {
-	font-size: 62.5%;
-	font-family: $font;
-	line-height: 1;
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
 }
 
 body {
-	font-size: 2rem;
-	background-color: $body-color;
+  font-family: $font-family;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $background-color;
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background-color: $ios-dark-background;
-		color: $ios-dark-text;
-	}
-}
-.subPageBody {
-	background-color: #fff;
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $spacing-unit;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-h1 {
-	font-size: 3rem;
+// Links
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $secondary-color;
+  }
 }
 
-h2 {
-	font-size: 2rem;
-}
-
-h3 {
-    font-size: 2rem;
-}
-
-// Better font rendering
-body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: $body-color;
-}
-
-// iOS-specific body enhancements
-body {
-	@include ios-safe-area-inset;
-	@include ios-dynamic-type;
-	@include ios-swipe-actions;
-}
-
-a:link,
-a:hover,
-a:visited,
-a:active {
-	color: $accent-color;
-	text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-	a:link,
-	a:hover,
-	a:visited,
-	a:active {
-		color: $ios-primary;
-	}
-}
-
-// Shadows
-$drop-shadow: 	drop-shadow(0px 5px 10px rgba(#000, 0.1)) 
-				drop-shadow(0px 1px 1px rgba(#000, 0.2)
-				);
-
-// Various resets
-*,
-*::before,
-*::after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-
-	margin: 0;
-	padding: 0;
-}
+// Add subject-specific utility classes
+.text-math { color: $math-color; }
+.text-law { color: $law-color; }
+.text-economics { color: $economics-color; }
+.text-history { color: $history-color; }

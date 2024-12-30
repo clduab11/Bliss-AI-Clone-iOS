@@ -1,0 +1,232 @@
+// Modern CSS Reset with custom additions for our needs
+
+// Box sizing rules
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Remove default margin and padding
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+// Set core root defaults
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+// Set core body defaults
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Make images easier to work with
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Remove list styles on ul, ol elements
+ul,
+ol {
+  list-style: none;
+}
+
+// Remove default padding on lists
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+// A elements that don't have a class get default styles
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+// Make it clear that interactive elements are clickable
+a[href],
+area,
+button,
+input,
+label[for],
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+// Remove all animations and transitions for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Form element resets
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+// Remove inner border and padding from Firefox buttons
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+// Correct styles for buttons
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  outline: inherit;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+// Hidden attribute
+[hidden] {
+  display: none !important;
+}
+
+// Selection
+::selection {
+  background-color: $primary-color;
+  color: $text-inverse;
+}
+
+// Focus visible
+:focus-visible {
+  outline: 3px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Scrollbar styles
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primary-color $bg-secondary;
+}
+
+// iOS tap highlight
+-webkit-tap-highlight-color: transparent;
+
+// Text selection
+user-select: none;
+
+// Prevent text size adjustment on orientation change
+text-size-adjust: none;
+
+// Remove gap between audio, canvas, iframes, images, videos
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+// Remove default fieldset styles
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// Allow only vertical resizing of textareas
+textarea {
+  resize: vertical;
+}
+
+// Fix for iOS font sizing bug
+@media screen and (max-device-width: 480px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+// Improve consistency of default fonts
+code,
+kbd,
+pre,
+samp {
+  font-family: $font-family-mono;
+}
+
+// Remove the margin on controls in Safari
+button,
+input,
+select {
+  margin: 0;
+}
+
+// Make sure textareas without a rows attribute are not tiny
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+// Prevent modern browsers from displaying audio without controls
+audio:not([controls]) {
+  display: none;
+  height: 0;
+} 
