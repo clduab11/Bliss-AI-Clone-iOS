@@ -36,7 +36,7 @@ Forthcoming link to the App Store soon!
 - Anthropic-compatible endpoints* 
 - OpenAI endpoints for GPT support*
 - Fine-tuned for optimal mentor-like support
-* Requires certain subscription level
+** - _Requires certain subscription level_
 
 ## Privacy and Security
 - Limited ads for free users (unfortunately, free users still generate API costs, I try to keep it fair!)
