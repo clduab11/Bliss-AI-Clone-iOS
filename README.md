@@ -1,6 +1,6 @@
 # Parallax Pal - Your Ultimate iOS Companion and Mentor
 
-Taking inspiration from the popular Bliss AI Android app, Parallax Pal is an innovative iOS mentor-style application designed to revolutionize your learning experience. Powered by advanced AI technology, your Parallax Pal aims to make learning smarter, more efficient, and tailored to your individual needs, without giving up private data!
+Taking inspiration from the popular Bliss AI Android app, Parallax Pal is an innovative, iOS-supported, mentor-style website application, designed to revolutionize your learning and knowledge experience. Powered by advanced AI technology, your Parallax Pal aims to make learning smarter, more efficient, and tailored to your individual needs, without giving up private data! No more Googling into the ether!
 
 ## Features
 
